@@ -1,4 +1,4 @@
-package cn.SafeThread.www.t1;
+package cn.SafeThread.t1;
 
 /**
  * @Title:

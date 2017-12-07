@@ -1,5 +1,7 @@
 package cn.mythread.www.test;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -14,8 +16,13 @@ public class Test {
 
         System.out.println(Thread.currentThread().getName());
 
-
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
+/*
+        System.out.println(System.currentTimeMillis());
+        System.out.println(1503418024);
+
+        System.out.println(sdf.format(new Date(1503418024)) );*/
 
        /* long a = date.getTime()+60*60*1000*24*30L;
 
@@ -45,6 +52,38 @@ public class Test {
         Pattern pattern = Pattern.compile(regx);
         Matcher matcher = pattern.matcher(str);
         System.out.print(matcher.matches());*/
+
+
+
+
+        Calendar calendar1 = Calendar.getInstance();
+
+        calendar1.add(Calendar.MONTH,0);
+        calendar1.add(Calendar.MONTH,2);
+        calendar1.add(Calendar.MONTH,1);
+        //calendar1.setTime(date);
+        System.out.println(sdf.format(calendar1.getTime()));
+
+
+        long l1 = System.currentTimeMillis();
+
+
+        for(int i = 0;i<10000;i++){
+            for (int j= 0;j<100;j++){
+                int temp = i*j;
+            }
+        }
+        long l2 = System.currentTimeMillis();
+        System.out.println(l2-l1);
+
+        System.out.println(calendar1.getTime());
+        System.out.println(calendar1.get(Calendar.YEAR));
+
+        System.out.println(calendar1.get(Calendar.MONTH));
+
+
+        Calendar calendar2 = Calendar.getInstance();
+       // calendar2.setTime(date2);
 
 
     }
